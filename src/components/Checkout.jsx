@@ -6,6 +6,7 @@ import { DATE_FORMAT } from "../utils/helper";
 export const Checkout = () => {
   const {
     flightName,
+    flightId,
     flightLogo,
     departureFrom,
     departureTo,
@@ -24,6 +25,7 @@ export const Checkout = () => {
   const BookedTicket = () => {
     let bookingDetails = [
       {
+        flightId: flightId,
         userName: userName,
         flightLogo: flightLogo,
         flightName: flightName,

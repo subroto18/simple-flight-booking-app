@@ -24,19 +24,23 @@ export const ShowBooked = () => {
   };
 
   const getBookedFlightDataByDate = async (date) => {
-    let bookedDetails = await JSON.parse(LOCAL_STORAGE_GET(date));
-    setShowBookedFlight(bookedDetails);
+    let dataExist = Boolean(JSON.parse(LOCAL_STORAGE_GET(date)));
 
-    // after getting todays booked flight
+    if (dataExist) {
+      let bookedDetails = await JSON.parse(LOCAL_STORAGE_GET(date));
+      setShowBookedFlight(bookedDetails);
 
-    // after getting all booked flight by flight name, how have to check weaher all flight are same or not
+      // after getting todays booked flight
 
-    let checkDuplicateFlight = UNIQUE_ITEM_FROM_ARRAY_OF_OBJECT(
-      bookedDetails,
-      "flightName"
-    );
+      // after getting all booked flight by flight name, how have to check weaher all flight are same or not
 
-    setBookedTicket(checkDuplicateFlight);
+      let checkDuplicateFlight = UNIQUE_ITEM_FROM_ARRAY_OF_OBJECT(
+        bookedDetails,
+        "flightName"
+      );
+
+      setBookedTicket(checkDuplicateFlight);
+    }
   };
 
   const showDataByFlightName = async (flightName = null) => {

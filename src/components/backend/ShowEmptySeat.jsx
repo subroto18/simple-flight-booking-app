@@ -27,22 +27,27 @@ export const ShowEmptySeat = () => {
 
   const getBookedFlightDataByDate = async (date) => {
     let bookedDetails = await JSON.parse(LOCAL_STORAGE_GET(date));
-    setShowBookedFlight(bookedDetails);
-    setBookedTicket(bookedDetails);
 
-    const bookedSeatObj = {};
+    let dataExist = Boolean(bookedDetails);
 
-    for (let key in bookedDetails) {
-      let flightName = `${bookedDetails[key]["flightName"]}-${bookedDetails[key]["departureFrom"]}-${bookedDetails[key]["departureTo"]} `;
-      let bookedSeat = bookedDetails[key]["bookedSeat"].length;
+    if (dataExist) {
+      setShowBookedFlight(bookedDetails);
+      setBookedTicket(bookedDetails);
 
-      bookedSeatObj[flightName] =
-        bookedSeatObj[flightName] !== undefined
-          ? bookedSeatObj[flightName] + bookedSeat
-          : bookedSeat;
+      const bookedSeatObj = {};
+
+      for (let key in bookedDetails) {
+        let flightId = bookedDetails[key]["flightId"];
+        let bookedSeat = bookedDetails[key]["bookedSeat"].length;
+
+        bookedSeatObj[flightId] =
+          bookedSeatObj[flightId] !== undefined
+            ? bookedSeatObj[flightId] + bookedSeat
+            : bookedSeat;
+      }
+
+      setBookedSeat(bookedSeatObj);
     }
-
-    setBookedSeat(bookedSeatObj);
   };
 
   const showDataByFlightName = async (flightName = null) => {
@@ -69,17 +74,32 @@ export const ShowEmptySeat = () => {
 
   const Option = FLIGHT_NAME_FROM_OPTIONS(showAllAvailableFlight);
 
+  //
+
+  // show empty seat
+
+  let bookedData = bookedTicket.map((item) => {
+    let bookedTotalSeat = bookedSeat[item.flightId];
+
+    return {
+      flightName: item.flightName,
+      flightLogo: item.flightLogo,
+      departureFrom: item.departureFrom,
+      emptySeat: 26 - bookedTotalSeat,
+    };
+  });
+
   return (
     <>
       <Select
-        onChange={handleFilterByFlightName}
+        onChange={() => handleFilterByFlightName()}
         options={Option}
         className="mb-4"
       />
 
       {bookedTicket.length > 0 ? (
         <>
-          {bookedTicket.map((item) => {
+          {bookedData.map((item) => {
             return (
               <div
                 key={item.flightName}
@@ -104,7 +124,7 @@ export const ShowEmptySeat = () => {
                 </p>
 
                 <p className="border-2 bg-slate-300 px-5 py-3 font-bold relative text-center">
-                  {25 - item.bookedSeat.length}
+                  {item.emptySeat}
                   <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
                     Empty Seat
                   </span>

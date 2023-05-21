@@ -8,16 +8,27 @@ import flightData from "../../data/flightData.json";
 // 2. See the empty seats today. On clicking Flight wise listing
 export const Dashboard = () => {
   const [totalBooking, setTotalBooking] = useState(0);
-  const [totalEmptySeat, setTotalEmptySeat] = useState(0);
+  const [totalEmptySeat, setTotalEmptySeat] = useState(flightData.length * 26);
   useEffect(() => {
     let todays_booked_flight = DATE_FORMAT(new Date());
     let bookedDetails = LOCAL_STORAGE_GET(todays_booked_flight);
-    todaybookedSeat(JSON.parse(bookedDetails));
-    todayEmptyEmptySeat(JSON.parse(bookedDetails));
+
+    let dataExist = Boolean(bookedDetails);
+
+    if (dataExist) {
+      todaybookedSeat(JSON.parse(bookedDetails));
+      todayEmptyEmptySeat(JSON.parse(bookedDetails));
+    }
   }, [totalBooking, totalEmptySeat]);
 
   const todaybookedSeat = (data) => {
-    setTotalBooking(data.length);
+    let bookedSeatToday = 0;
+
+    data.map((item) => {
+      bookedSeatToday += item.bookedSeat.length;
+    });
+
+    setTotalBooking(bookedSeatToday);
   };
 
   const todayEmptyEmptySeat = (data) => {

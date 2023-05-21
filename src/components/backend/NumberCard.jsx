@@ -24,7 +24,7 @@ export const NumberCard = ({
   };
 
   return (
-    <div className="bg-slate-700 py-20 text-center rounded">
+    <div className="bg-slate-700 py-20 text-center rounded ">
       <h1 className="text-white text-2xl ">{title}</h1>
       <p className="text-white text-4xl font-bold text-red-500">{number}</p>
       <button

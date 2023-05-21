@@ -6,6 +6,7 @@ import {
 } from "../../utils/helper";
 
 const initialState = {
+  flightId: "",
   flightName: "",
   departureTime: "",
   departureFrom: "",
@@ -24,6 +25,7 @@ const bookingDetailsSlice = createSlice({
   reducers: {
     // when click on "departure from" button , store it into "departureFrom" state
     updateBookingDetails: (state, action) => {
+      state.flightId = action.payload._id;
       state.flightName = action.payload.flight_name;
       state.flightLogo = action.payload.flight_logo;
       state.departureFrom = action.payload.departure_from;

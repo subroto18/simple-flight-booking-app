@@ -3,6 +3,7 @@ import apiSlice from "./slices/apiSlice";
 import authSlice from "./slices/authSlice";
 import bookingDetailsSlice from "./slices/bookingDetailsSlice";
 import bookingSearchSlice from "./slices/bookingSearchSlice";
+import dashboardSlice from "./slices/dashboardSlice";
 import invoiceSlice from "./slices/invoiceSlice";
 
 export const store = configureStore({
@@ -12,6 +13,7 @@ export const store = configureStore({
     bookingDetails: bookingDetailsSlice,
     authDetails: authSlice,
     invoice: invoiceSlice,
+    dashboard: dashboardSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

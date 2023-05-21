@@ -46,6 +46,7 @@ export const SearchPortal = () => {
   const selectOptionForDepartureFrom =
     DEPARTURE_FROM_OPTIONS(departureFromArray);
 
+  console.log(selectOptionForDepartureFrom, "se");
   const handleDepartureFrom = (e) => {
     dispatch(updateIsDeparureFrom(false));
     dispatch(updateDepartureFrom(e.value));

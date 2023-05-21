@@ -16,6 +16,17 @@ export const DEPARTURE_FROM_OPTIONS = (data) => {
   });
 };
 
+export const FLIGHT_NAME_FROM_OPTIONS = (data) => {
+  //here data is array of object
+
+  return data.map((item) => {
+    return {
+      value: item.flight_name,
+      label: item.flight_name.toUpperCase(),
+    };
+  });
+};
+
 export const DEPARTURE_TO_OPTIONS = (data) => {
   //here data is array of object
 

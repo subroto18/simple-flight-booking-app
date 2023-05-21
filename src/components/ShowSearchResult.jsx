@@ -76,31 +76,31 @@ export const ShowSearchResult = () => {
             return (
               <div
                 key={item._id}
-                className="bg-slate-200 p-5  flex w-9/12 m-auto rounded justify-center mb-5"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 bg-slate-200 p-5  flex w-9/12 m-auto rounded justify-center mb-5"
               >
                 <img
                   src={item.flight_logo}
                   alt={item.flight_name}
-                  className="h-12 w-24 mr-5 rounded mt-1"
+                  className="h-14 w-full rounded mt-1"
                 />
-                <p className="border-2 bg-slate-300 px-5 py-3 font-bold mr-5">
+                <p className="border-2 bg-slate-300 px-5 py-3 font-bold ">
                   {item.flight_name}
                 </p>
-                <p className="border-2 bg-slate-300 px-5 py-3 font-bold mx-5">
+                <p className="border-2 bg-slate-300 px-5 py-3 font-bold ">
                   {item.departure_time}
                 </p>
-                <p className="border-2 bg-slate-300 px-5 py-3 font-bold mx-5">
+                <p className="border-2 bg-slate-300 px-5 py-3 font-bold">
                   {item.flight_duration}
                 </p>
-                <p className="border-2 bg-slate-300 px-5 py-3 font-bold mx-5">
+                <p className="border-2 bg-slate-300 px-5 py-3 font-bold ">
                   {item.reaching_time}
                 </p>
-                <p className="border-2 bg-slate-300 px-5 py-3 font-bold mx-5">
+                <p className="border-2 bg-slate-300 px-5 py-3 font-bold">
                   ₹ {item.flight_fare}
                 </p>
                 <button
                   onClick={() => onBookFlight(item)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold  ml-5 px-10  rounded"
+                  className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold  px-10  py-3 w-full rounded"
                 >
                   Book Now
                 </button>

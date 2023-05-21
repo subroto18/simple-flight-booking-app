@@ -66,10 +66,18 @@ export const Login = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={login}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
             type="button"
           >
             Sign In
+          </button>
+
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+          >
+            Redirect to Dashboard
           </button>
         </div>
       </form>

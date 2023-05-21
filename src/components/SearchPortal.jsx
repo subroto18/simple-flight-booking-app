@@ -1,4 +1,4 @@
-import { BsChevronDown } from "react-icons/Bs";
+import { BsChevronDown } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import departureData from "../data/flightData.json";
 import DatePicker from "react-date-picker";

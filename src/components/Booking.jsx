@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useBookedSeat from "../hooks/useBookedSeat";
 import { updateBookingSeat } from "../store/slices/bookingDetailsSlice";
 import { DATE_FORMAT } from "../utils/helper";
-import { Checkout } from "./checkout";
+import { Checkout } from "./Checkout";
 
 export const Booking = () => {
   const {

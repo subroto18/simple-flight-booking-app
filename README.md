@@ -1,9 +1,3 @@
-# vite-react-tailwind-template
-
-# vite-react-tailwind-template
-
-# simple-flight-booking-app
-
 # Booking App
 
 This project is designed search flight between routes and select the flight ticket based on the date

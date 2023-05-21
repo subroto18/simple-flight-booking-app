@@ -1,0 +1,135 @@
+[
+  {
+    "_id": 1,
+    "flight_name": "Indigo",
+    "flight_logo": "https://logos-download.com/wp-content/uploads/2021/01/IndiGo_Logo.png",
+    "departure_from": "kolkata",
+    "departure_to": "delhi",
+    "departure_time": "7:00",
+    "flight_duration": "1h",
+    "reaching_time": "8:00",
+    "flight_fare": "3400"
+  },
+  {
+    "_id": 2,
+    "flight_name": "Indigo",
+    "flight_logo": "https://logos-download.com/wp-content/uploads/2021/01/IndiGo_Logo.png",
+    "departure_from": "delhi",
+    "departure_to": "kolkata",
+    "departure_time": "9:00",
+    "flight_duration": "2h 10m",
+    "reaching_time": "11:10",
+    "flight_fare": "3700"
+  },
+  {
+    "_id": 3,
+    "flight_name": "Indigo",
+    "flight_logo": "https://logos-download.com/wp-content/uploads/2021/01/IndiGo_Logo.png",
+    "departure_from": "agartala",
+    "departure_to": "bangalore",
+    "departure_time": "12:00",
+    "flight_duration": "3h",
+    "reaching_time": "15:00",
+    "flight_fare": "3100"
+  },
+  {
+    "_id": 4,
+    "flight_name": "Indigo",
+    "flight_logo": "https://logos-download.com/wp-content/uploads/2021/01/IndiGo_Logo.png",
+    "departure_from": "mumbai",
+    "departure_to": "chennai",
+    "departure_time": "12:00",
+    "flight_duration": "2h",
+    "reaching_time": "14:00",
+    "flight_fare": "3800"
+  },
+
+  {
+    "_id": 5,
+    "flight_name": "Vistara",
+    "flight_logo": "https://www.airvistara.com/content/dam/airvistara/global/common/images/logo/logo.png",
+    "departure_from": "kolkata",
+    "departure_to": "delhi",
+    "departure_time": "12:00",
+    "flight_duration": "2h 15m",
+    "reaching_time": "14:15",
+    "flight_fare": "3400"
+  },
+  {
+    "_id": 6,
+    "flight_name": "Vistara",
+    "flight_logo": "https://www.airvistara.com/content/dam/airvistara/global/common/images/logo/logo.png",
+    "departure_from": "delhi",
+    "departure_to": "kolkata",
+    "departure_time": "12:00",
+    "flight_duration": "2h 10m",
+    "reaching_time": "14:10",
+    "flight_fare": "3700"
+  },
+  {
+    "_id": 7,
+    "flight_name": "Vistara",
+    "flight_logo": "https://www.airvistara.com/content/dam/airvistara/global/common/images/logo/logo.png",
+    "departure_from": "agartala",
+    "departure_to": "bangalore",
+    "departure_time": "12:00",
+    "flight_duration": "3h",
+    "reaching_time": "15:00",
+    "flight_fare": "3100"
+  },
+  {
+    "_id": 8,
+    "flight_name": "Vistara",
+    "flight_logo": "https://www.airvistara.com/content/dam/airvistara/global/common/images/logo/logo.png",
+    "departure_from": "mumbai",
+    "departure_to": "chennai",
+    "departure_time": "12:00",
+    "flight_duration": "2h",
+    "reaching_time": "14:00",
+    "flight_fare": "3800"
+  },
+  {
+    "_id": 9,
+    "flight_name": "Air India",
+    "flight_logo": "https://newsonair.gov.in/writereaddata/News_Pictures/NAT/2020/Jan/NPIC-20201581534.jpeg",
+    "departure_from": "kolkata",
+    "departure_to": "delhi",
+    "departure_time": "12:00",
+    "flight_duration": "2h 5m",
+    "reaching_time": "14:05",
+    "flight_fare": "3400"
+  },
+  {
+    "_id": 10,
+    "flight_name": "Air India",
+    "flight_logo": "https://newsonair.gov.in/writereaddata/News_Pictures/NAT/2020/Jan/NPIC-20201581534.jpeg",
+    "departure_from": "delhi",
+    "departure_to": "kolkata",
+    "departure_time": "12:00",
+    "flight_duration": "2h 10m",
+    "reaching_time": "14:10",
+    "flight_fare": "3700"
+  },
+  {
+    "_id": 11,
+    "flight_name": "Air India",
+    "flight_logo": "https://newsonair.gov.in/writereaddata/News_Pictures/NAT/2020/Jan/NPIC-20201581534.jpeg",
+    "departure_from": "agartala",
+    "departure_to": "bangalore",
+    "departure_time": "12:00",
+    "flight_duration": "3h",
+    "reaching_time": "15:00",
+    "flight_fare": "3100"
+  },
+  {
+    "_id": 12,
+    "flight_name": "Air India",
+    "flight_logo": "https://newsonair.gov.in/writereaddata/News_Pictures/NAT/2020/Jan/NPIC-20201581534.jpeg",
+    "departure_from": "mumbai",
+    "departure_to": "chennai",
+    "departure_time": "14:00",
+    "flight_duration": "1h 50m",
+    "reaching_time": "15:50",
+    "flight_fare": "3800"
+  }
+]

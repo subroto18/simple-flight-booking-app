@@ -17,6 +17,8 @@ for storing data , used local storage insted of database
 
 # Features:
 
+`*` user can book flight by date and once try to book the same seat in same flight at same date, it will show " seat already booked".
+
 `1` Using rudex for global state management.
 
 `2` Used react with tailwind for lucrative UI with vite.

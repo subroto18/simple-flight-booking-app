@@ -79,7 +79,7 @@ export const ShowBooked = () => {
       <Select
         onChange={handleFilterByFlightName}
         options={Option}
-        className="mb-4"
+        className="mb-4 relative z-30"
       />
 
       {bookedTicket.length > 0 ? (
@@ -97,13 +97,13 @@ export const ShowBooked = () => {
                 />
                 <p className="border-2 bg-slate-300 px-5 py-3 font-bold relative">
                   {item.flightName}
-                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
+                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-20">
                     Flight Name
                   </span>
                 </p>
                 <p className="border-2 bg-slate-300 px-5 py-3 font-bold relative">
                   {item.departureTime}
-                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
+                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-20">
                     Departure time
                   </span>
                 </p>

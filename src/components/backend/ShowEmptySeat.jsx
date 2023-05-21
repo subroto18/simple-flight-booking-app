@@ -60,6 +60,7 @@ export const ShowEmptySeat = () => {
 
   const handleFilterByFlightName = (data) => {
     // search booked ticket by flight name
+
     showDataByFlightName(data.value);
   };
 
@@ -92,9 +93,9 @@ export const ShowEmptySeat = () => {
   return (
     <>
       <Select
-        onChange={() => handleFilterByFlightName()}
+        onChange={handleFilterByFlightName}
         options={Option}
-        className="mb-4"
+        className="mb-4 z-30 relative"
       />
 
       {bookedTicket.length > 0 ? (
@@ -111,21 +112,21 @@ export const ShowEmptySeat = () => {
                     alt={item.flightName}
                     className="h-14 w-full rounded mt-1"
                   />
-                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
+                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-20">
                     {item.flightName}
                   </span>
                 </div>
 
                 <p className="border-2 bg-slate-300 px-5 py-3 font-bold relative text-center">
                   {item.departureFrom}
-                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
+                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-20">
                     Departure from
                   </span>
                 </p>
 
                 <p className="border-2 bg-slate-300 px-5 py-3 font-bold relative text-center">
                   {item.emptySeat}
-                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-50">
+                  <span className="text-sm absolute  right-0 top-10 bg-red-500 text-white p-2 rounded z-20">
                     Empty Seat
                   </span>
                 </p>

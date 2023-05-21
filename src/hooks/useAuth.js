@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateLoginDetails } from "../store/slices/authSlice";
 import { LOCAL_STORAGE_GET } from "../utils/helper";
 
 const useAuth = () => {
-  const [isLogedIn, setIsLogedIn] = useState(null);
+  const [isLogIn, setIsLogedIn] = useState(null);
+  const { isLogedIn } = useSelector((state) => state.authDetails);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,13 +17,19 @@ const useAuth = () => {
         isLogedIn: user.isLogedIn,
       };
       dispatch(updateLoginDetails(userDetails));
-      setIsLogedIn(true);
+      setIsLogedIn(isLogedIn);
     } else {
-      setIsLogedIn(false);
+      const userDetails = {
+        userName: "",
+        isLogedIn: false,
+      };
+      dispatch(updateLoginDetails(userDetails));
+
+      setIsLogedIn(isLogedIn);
     }
   }, [isLogedIn]);
 
-  return [isLogedIn];
+  return [isLogIn];
 };
 
 export default useAuth;

@@ -8,6 +8,8 @@ export const CheckoutPage = () => {
   const [isLogedIn] = useAuth();
   const { booked } = useSelector((store) => store.bookingDetails); // check weather seat is booked or not
 
+  console.log(isLogedIn, "isLogedIn");
+
   return isLogedIn == null ? (
     <Preloader />
   ) : isLogedIn && booked ? (

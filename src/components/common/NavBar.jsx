@@ -13,7 +13,6 @@ export const NavBar = () => {
       userName: "",
       isLogedIn: false,
     };
-
     dispatch(updateLoginDetails(loginDetails));
   };
 

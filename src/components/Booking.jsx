@@ -24,7 +24,7 @@ export const Booking = () => {
   console.log(alreadyBookedSeat, "alreadyBookedSeat");
 
   return (
-    <div className="bg-slate-200 min-h-full p-5">
+    <div className=" min-h-full p-5">
       <div className="flex w-11/12 m-auto justify-between py-5">
         <div>
           <h1 className="text-3xl">
@@ -38,8 +38,8 @@ export const Booking = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 my-5">
-        <div className="col-span-2 border-2 border-slate-800 rounded w-11/12 m-auto ">
+      <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 my-5">
+        <div className="bg-slate-600 col-span-2 border-2 border-slate-800 rounded w-11/12 m-auto ">
           <div>
             <div className="flex flex-wrap">
               {Array.apply(null, Array(26)).map((effect, index) => {

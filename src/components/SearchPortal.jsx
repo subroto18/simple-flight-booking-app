@@ -68,8 +68,16 @@ export const SearchPortal = () => {
   // departure date
 
   const onDateChange = (date) => {
-    dispatch(updateDepartureDate(date));
-    dispatch(updateIsDepartureDate(false));
+    let todays_date = new Date();
+
+    let checkDate = todays_date.getTime() <= date.getTime();
+
+    if (checkDate) {
+      dispatch(updateDepartureDate(date));
+      dispatch(updateIsDepartureDate(false));
+    } else {
+      alert("Sorry! Can't choose the past date to Book");
+    }
   };
 
   // search

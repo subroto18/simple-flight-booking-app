@@ -59,6 +59,21 @@ export const DATE_FORMAT = (date) => {
   return "" + (d <= 9 ? "0" + d : d) + "-" + m + "-" + y;
 };
 
+export const COMPARE_DATE = (date) => {
+  // check selected date is greater than current date or not
+
+  let todays_date = new Date();
+
+  let d1 = DATE_FORMAT(todays_date);
+
+  let d2 = DATE_FORMAT(date);
+
+  let date1 = new Date(d1).getTime();
+  let date2 = new Date(d2).getTime();
+
+  return date1 <= date2;
+};
+
 export const LOCAL_STORAGE_SET = (fileName, fileData) => {
   // Store the object into storage
   localStorage.setItem(fileName, JSON.stringify(fileData));

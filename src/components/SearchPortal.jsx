@@ -17,6 +17,7 @@ import {
 
 import Select from "react-select";
 import {
+  COMPARE_DATE,
   DATE_FORMAT,
   DEPARTURE_FROM_OPTIONS,
   DEPARTURE_TO_OPTIONS,
@@ -68,10 +69,8 @@ export const SearchPortal = () => {
   // departure date
 
   const onDateChange = (date) => {
-    let todays_date = new Date();
-
-    let checkDate = todays_date.getTime() <= date.getTime();
-
+    // check selected date is greater than current date or not
+    let checkDate = COMPARE_DATE(date);
     if (checkDate) {
       dispatch(updateDepartureDate(date));
       dispatch(updateIsDepartureDate(false));

@@ -76,7 +76,7 @@ export const SearchPortal = () => {
       dispatch(updateDepartureDate(date));
       dispatch(updateIsDepartureDate(false));
     } else {
-      alert("Sorry! Can't choose the past date to Book");
+      alert("Please Choose the upcoming date!");
     }
   };
 

@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { updateLoginDetails } from "../../store/slices/authSlice";
 import { LOCAL_STORAGE_REMOVE, LOGO } from "../../utils/helper";
 
 export const NavBar = () => {
   const { isLogedIn, userName } = useSelector((store) => store.authDetails);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const logout = () => {
     LOCAL_STORAGE_REMOVE("auth");
@@ -15,6 +16,8 @@ export const NavBar = () => {
     };
     dispatch(updateLoginDetails(loginDetails));
   };
+
+  console.log();
 
   return (
     <div className="bg-slate-800 p-5">
@@ -31,23 +34,27 @@ export const NavBar = () => {
           </Link>
         </div>
         <div className="flex items-center">
-          <ul>
-            <li className="text-white">
-              {isLogedIn ? (
-                <>
-                  {userName.toUpperCase()}
-                  <button
-                    onClick={logout}
-                    className=" ml-5 bg-blue-500 hover:bg-blue-700 text-white font-bold w-ful px-10 py-2  rounded mt-2"
-                  >
-                    Log out
-                  </button>
-                </>
-              ) : (
-                <Link to="/login">Login</Link>
-              )}
-            </li>
-          </ul>
+          <>
+            {location.pathname !== "/dashboard" && (
+              <ul>
+                <li className="text-white">
+                  {isLogedIn ? (
+                    <>
+                      {userName.toUpperCase()}
+                      <button
+                        onClick={logout}
+                        className=" ml-5 bg-blue-500 hover:bg-blue-700 text-white font-bold w-ful px-10 py-2  rounded mt-2"
+                      >
+                        Log out
+                      </button>
+                    </>
+                  ) : (
+                    <Link to="/login">Login</Link>
+                  )}
+                </li>
+              </ul>
+            )}
+          </>
         </div>
       </div>
     </div>
